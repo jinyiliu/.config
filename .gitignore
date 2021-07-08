@@ -1,0 +1,10 @@
+# ignore everything
+/*
+/*/
+
+# ...but these:
+!/.zshrc
+!/.gitignore
+!/iterm2/
+!/nvim/
+/nvim/plugged/*
