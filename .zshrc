@@ -112,4 +112,4 @@ alias intel_env="source /home/liujy/IHEP/intel/oneapi/setvars.sh"
 
 
 # suggested by Anaconda v4.5.1
-. /home/liujy/anaconda3/etc/profile.d/conda.sh
+. $HOME/anaconda3/etc/profile.d/conda.sh
