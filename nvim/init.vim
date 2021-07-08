@@ -164,7 +164,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'ryanoasis/vim-devicons' " vimscript
 " Plug 'kyazdani42/nvim-web-devicons' " lua
 " Plug 'mhinz/vim-signify'
-" Plug 'airblace/vim-gitgutter'
+Plug 'airblace/vim-gitgutter'
 
 
 " File Navigation
