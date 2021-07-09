@@ -240,6 +240,7 @@ hi link illuminatedWord Visual
 " set termguicolors
 " let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 
+
 " nvim-treesitter/nvim-treesitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
@@ -253,13 +254,10 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 
-" mhinz/vim-signify
-" let g:signify_sign_add                  = '+'
-" let g:signify_sign_delete               = '⎽'
-" let g:signify_sign_delete_first_line    = '⎺'
-" let g:signify_sign_change               = '~'
-" let g:signify_sign_show_cont            = 0
-" let g:signify_sign_show_text            = 1
+" airblace/vim-gitgutter
+let g:gitgutter_map_keys = 0
+nmap c[ <Plug>(GitGutterPrevHunk)
+nmap c] <Plug>(GitGutterNextHunk)
 
 
 " LunarWatcher/auto-pairs
