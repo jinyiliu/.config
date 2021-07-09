@@ -196,7 +196,7 @@ call plug#end()
 
 
 
-" Colorscheme
+" joshdick/onedark.vim
 if (has("termguicolors"))
     set termguicolors
     hi LineNr ctermbg=NONE guibg=NONE
@@ -205,11 +205,29 @@ syntax on
 let g:nvcode_termcolors = 256
 colorscheme onedark
 
+
 " itchyny/lightline.vim
 let g:lightline = {
-  \ 'colorscheme': 'one',
-  \ }
+    \ 'colorscheme': 'onedark',
+    \ }
 
+let g:lightline.tabline = {
+    \ 'left': [ [ 'tabs' ] ],
+    \ 'right': [  ],
+    \ }
+
+let g:lightline.tab = {
+    \ 'active': [ 'filename', 'modified' ],
+    \ 'inactive': [ 'filename', 'modified' ],
+    \ }
+
+let g:lightline.seperator = { 'left': '', 'right': '' }
+let g:lightline.subseparator = { 'left': '', 'right': '' }
+
+let g:lightline.enable = {
+    \ 'statusline': 1,
+    \ 'tabline': 1
+    \ }
 
 
 " RRethy/vim-illuminate
@@ -322,8 +340,8 @@ function! s:check_back_space() abort
 endfunction
 
 
-" Use <leader><space> to trigger completion
-inoremap <silent><expr> <leader><space> coc#refresh()
+" Use <leader>c to trigger completion
+inoremap <silent><expr> <leader>c coc#refresh()
 
 " Use `g[` and `g]` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
