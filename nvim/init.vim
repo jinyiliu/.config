@@ -243,7 +243,7 @@ hi link illuminatedWord Visual
 
 " nvim-treesitter/nvim-treesitter
 lua << EOF
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   ensure_installed = {  "bash", "c", "c_sharp", "cpp", "fortran", "python",
                         "json", "html", "latex", "lua"},
   highlight = {
@@ -300,6 +300,41 @@ let g:AutoPairsCompatibleMaps = 0 " recommended setting
 
 
 " nvim-telescope/telescope.nvim
+lua << EOF
+local actions = require('telescope.actions')
+require('telescope').setup {
+    defaults = {
+        entry_prefix = "  ",
+        prompt_prefix = "► ",
+        selection_caret = "► ",
+        initial_mode = "insert",
+        sorting_strategy = "descending",
+        layout_strategy = "horizontal",
+        winblend = 12,
+        set_env = { ['COLORTERM'] = 'truecolor' },
+        color_devicons = true,
+        border = {},
+        borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+        path_display = {},
+        file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
+        grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+        qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+
+        buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
+
+        file_sorter =  require('telescope.sorters').get_fuzzy_file,
+        file_ignore_patterns = {},
+        generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
+        mappings = {
+            i = {
+                ["<C-j>"] = actions.move_selection_next,
+                ["<C-k>"] = actions.move_selection_previous,
+            },
+        },
+    }
+}
+EOF
+
 nnoremap ff <cmd>Telescope find_files<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
 nnoremap fb <cmd>Telescope buffers<cr>
