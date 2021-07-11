@@ -113,3 +113,16 @@ alias intel_env="source /home/liujy/IHEP/intel/oneapi/setvars.sh"
 
 # suggested by Anaconda v4.5.1
 . /home/liujy/anaconda3/etc/profile.d/conda.sh
+
+# Mac Config @Jinyi
+if [[ "$(uname)" == "Darwin" ]]
+then
+    # iTerm2 prettify titlebar background
+    echo -e "\033]6;1;bg;red;brightness;40\a"
+    echo -e "\033]6;1;bg;green;brightness;44\a"
+    echo -e "\033]6;1;bg;blue;brightness;52\a"
+
+    # Speed up cursor
+    defaults write NSGlobalDomain KeyRepeat -int 1
+    defaults write NSGlobalDomain InitialKeyRepeat -int 15
+fi
