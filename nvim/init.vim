@@ -4,6 +4,7 @@
 " Avoid messy code
 set encoding=utf-8
 set fileencodings=utf-8,gbk,big5
+set nocompatible
 
 " General visual settings
 set cursorline
@@ -72,14 +73,18 @@ set lazyredraw "should make scrolling faster
 
 
 " Terminal Behavior
-" =================
-" TODO
-
+tnoremap <Esc> <C-\><C-n>
+augroup neovim_terminal
+    autocmd!
+    " Enter Terminal-mode (insert) automatically
+    autocmd TermOpen * startinsert
+    " Disables number lines on terminal buffers
+    autocmd TermOpen * :set nonumber norelativenumber
+augroup END
 
 
 
 " Basic Mappings
-" ==============
 let mapleader = ','
 noremap ; :
 
@@ -135,6 +140,8 @@ noremap tl :tabnext<CR>
 
 " Buffer management
 noremap bd :bdelete<CR>
+noremap bp :bprevious<CR>
+noremap bn :bnext<CR>
 
 
 
@@ -173,6 +180,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
+" Slime for vim
+Plug 'jpalardy/vim-slime'
 
 " Coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -182,6 +191,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'nvim-lua/completion-nvim'
 " Plug 'nvim-lua/diagnostic-nvim'
 
+" Debugger
+" Plug 'puremorning/vimspector'
+" Plug 'szw/maximizer'
 
 " Enhancement
 Plug 'LunarWatcher/auto-pairs', { 'tag': '*' }
@@ -310,7 +322,7 @@ require('telescope').setup {
         initial_mode = "insert",
         sorting_strategy = "descending",
         layout_strategy = "horizontal",
-        winblend = 12,
+        winblend = 10,
         set_env = { ['COLORTERM'] = 'truecolor' },
         color_devicons = true,
         border = {},
@@ -341,23 +353,25 @@ nnoremap fb <cmd>Telescope buffers<cr>
 nnoremap fc <cmd>Telescope colorscheme<cr>
 
 
-
+" jpalardy/vim-slime
+let g:slime_target = "tmux"
+let g:slime_default_config = {
+    \ "socket_name": "default",
+    \ "target_pane": "{right-of}",
+    \ }
+let g:slime_python_ipython = 1
+let g:slime_dont_ask_default = 1
 
 
 
 " neoclide/coc.nvim
-" =================
 let g:coc_global_extensions = [
 	\ 'coc-pyright',
 	\ 'coc-json',
 	\ 'coc-vimlsp',
     \ 'coc-snippets']
 
-
-
-
 " Use <TAB> for trigger completion with characters ahead and navigate.
-
 inoremap <silent><expr> <C-j>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -381,13 +395,11 @@ inoremap <silent><expr> <leader>c coc#refresh()
 nmap <silent> g[ <Plug>(coc-diagnostic-prev)
 nmap <silent> g] <Plug>(coc-diagnostic-next)
 
-
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
 
 " Use <space>k to show documentation in preview window.
 nnoremap <silent> <space>k :call <SID>show_documentation()<CR>
@@ -401,7 +413,6 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
-
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
