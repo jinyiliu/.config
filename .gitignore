@@ -8,3 +8,6 @@
 !/iterm2/
 !/nvim/
 /nvim/plugged/*
+!/coc
+/coc/*
+!/coc/pyrightconfig.json
