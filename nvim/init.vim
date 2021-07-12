@@ -207,6 +207,12 @@ Plug 'tpope/vim-commentary'
 call plug#end()
 
 
+" Automatically install missing plugins on startup
+autocmd VimEnter *
+  \  if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
+
 
 " joshdick/onedark.vim
 if (has("termguicolors"))
