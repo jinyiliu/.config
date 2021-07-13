@@ -16,6 +16,11 @@
     "diagnostic.hintSign": "●",
     "diagnostic.format": "%source%code: %message",
 
-	"codeLens.enable": true
+	"codeLens.enable": true,
+
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportGeneralTypeIssues": false,
+        "reportInvalidStringEscapeSequence": false
+    }
 
 }
