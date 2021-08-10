@@ -77,7 +77,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export PATH=$HOME/.config/nvim:$PATH
 export PATH=$HOME/.config/iterm2:$PATH
-export GOLANG=/usr/lib/go-1.10
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -107,12 +106,9 @@ alias vi="nvim"
 alias gf="gfortran"
 alias cact="conda activate"
 
-# Alipp
-alias intel_env="source /home/liujy/IHEP/intel/oneapi/setvars.sh"
-
 
 # suggested by Anaconda v4.5.1
-. /home/liujy/anaconda3/etc/profile.d/conda.sh
+. $HOME/anaconda3/etc/profile.d/conda.sh
 
 # Mac Config @Jinyi
 if [[ "$(uname)" == "Darwin" ]]
@@ -126,3 +122,6 @@ then
     defaults write NSGlobalDomain KeyRepeat -int 1
     defaults write NSGlobalDomain InitialKeyRepeat -int 15
 fi
+
+# based on your machine @Jinyi
+source $HOME/.config/.zshrc_plus
