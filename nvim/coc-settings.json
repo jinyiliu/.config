@@ -19,8 +19,9 @@
 	"codeLens.enable": true,
 
     "python.analysis.diagnosticSeverityOverrides": {
-        "reportGeneralTypeIssues": false,
-        "reportInvalidStringEscapeSequence": false
+        "reportGeneralTypeIssues": "none",
+        "reportInvalidStringEscapeSequence": "none",
+        "reportUnboundVariable": "warning"
     }
 
 }
