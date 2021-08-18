@@ -77,6 +77,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export PATH=$HOME/.config/nvim:$PATH
 export PATH=$HOME/.config/iterm2:$PATH
+export EDITOR=$HOME/.config/nvim/nvim
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
