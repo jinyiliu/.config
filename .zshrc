@@ -75,9 +75,16 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH=$HOME/.config/nvim:$PATH
 export PATH=$HOME/.config/iterm2:$PATH
-export EDITOR=$HOME/.config/nvim/nvim
+
+if [[ "$(uname)" == "Darwin" ]]
+then
+    export EDITOR=$HOME/.config/nvim/nvim-osx64/bin/nvim
+    export PATH=$HOME/.config/nvim/nvim-osx64/bin:$PATH
+else
+    export EDITOR=$HOME/.config/nvim/nvim
+    export PATH=$HOME/.config/nvim:$PATH
+fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -125,4 +132,7 @@ then
 fi
 
 # based on your machine @Jinyi
-source $HOME/.config/.zshrc_plus
+if [ -f "$HOME/.config/.zshrc_plus" ]
+then
+    source $HOME/.config/.zshrc_plus
+fi

@@ -163,7 +163,7 @@ Plug 'itchyny/lightline.vim'
 
 " General Highlighter
 Plug 'RRethy/vim-illuminate'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 
@@ -260,16 +260,16 @@ hi link illuminatedWord Visual
 
 
 " nvim-treesitter/nvim-treesitter
-lua << EOF
-require('nvim-treesitter.configs').setup {
-  ensure_installed = {  "bash", "c", "c_sharp", "cpp", "fortran", "python",
-                        "json", "html", "latex", "lua"},
-  highlight = {
-    enable = true,
-    disable = { "python", "c" }
-  },
-}
-EOF
+"lua << EOF
+"require('nvim-treesitter.configs').setup {
+"  ensure_installed = {  "bash", "c", "c_sharp", "cpp", "fortran", "python",
+"                        "json", "html", "latex", "lua"},
+"  highlight = {
+"    enable = true,
+"    disable = { "python", "c" }
+"  },
+"}
+"EOF
 
 
 " airblace/vim-gitgutter
