@@ -18,6 +18,7 @@ set number
 " set colorcolumn=100
 set noshowmode
 set nowrap
+autocmd FileType markdown set wrap
 set scrolloff=4
 
 
