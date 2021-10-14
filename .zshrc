@@ -73,7 +73,6 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.config/iterm2/iterm2_shell_integration.zsh
 
 # User configuration
 export PATH=$HOME/.config/iterm2:$PATH
