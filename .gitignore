@@ -9,3 +9,7 @@
 !/iterm2/
 !/nvim/
 /nvim/plugged/*
+
+# macOS
+iterm2/AppSupport
+nvim/nvim-osx64/
