@@ -21,7 +21,7 @@
     "python.analysis.diagnosticSeverityOverrides": {
         "reportGeneralTypeIssues": "none",
         "reportInvalidStringEscapeSequence": "none",
-        "reportUnboundVariable": "warning"
+        "reportUnboundVariable": "none"
     }
 
 }
