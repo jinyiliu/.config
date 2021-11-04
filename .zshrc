@@ -124,9 +124,9 @@ alias cact="conda activate"
 if [[ "$(uname)" == "Darwin" ]]
 then
     # iTerm2 prettify titlebar background
-    echo -e "\033]6;1;bg;red;brightness;40\a"
-    echo -e "\033]6;1;bg;green;brightness;44\a"
-    echo -e "\033]6;1;bg;blue;brightness;52\a"
+    # echo -e "\033]6;1;bg;red;brightness;40\a"
+    # echo -e "\033]6;1;bg;green;brightness;44\a"
+    # echo -e "\033]6;1;bg;blue;brightness;52\a"
 
     # Speed up cursor
     defaults write NSGlobalDomain KeyRepeat -int 1
