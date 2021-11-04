@@ -115,6 +115,7 @@ alias me="cd $HOME"
 alias vi="nvim"
 alias gf="gfortran"
 alias cact="conda activate"
+alias ipython="ipython --pylab"
 
 
 # suggested by Anaconda v4.5.1
@@ -127,6 +128,9 @@ then
     # echo -e "\033]6;1;bg;red;brightness;40\a"
     # echo -e "\033]6;1;bg;green;brightness;44\a"
     # echo -e "\033]6;1;bg;blue;brightness;52\a"
+
+    # SSH
+    alias ssh="ssh -Y"
 
     # Speed up cursor
     defaults write NSGlobalDomain KeyRepeat -int 1
