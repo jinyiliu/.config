@@ -10,6 +10,7 @@
 !/nvim/
 !/oh-my-zsh/
 /nvim/plugged/*
+!/bin
 
 # macOS
 iterm2/AppSupport

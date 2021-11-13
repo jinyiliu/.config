@@ -77,6 +77,7 @@ source $HOME/.config/iterm2/iterm2_shell_integration.zsh
 
 # User configuration
 export PATH=$HOME/.config/iterm2:$PATH
+export PATH=$HOME/.config/bin:$PATH
 
 if [[ "$(uname)" == "Darwin" ]]
 then
@@ -129,8 +130,10 @@ then
     # echo -e "\033]6;1;bg;green;brightness;44\a"
     # echo -e "\033]6;1;bg;blue;brightness;52\a"
 
-    # SSH
+    # alias
     alias ssh="ssh -Y"
+    alias lsp="lspaper -p"
+    alias fdp="fdpaper -k"
 
     # Speed up cursor
     defaults write NSGlobalDomain KeyRepeat -int 1

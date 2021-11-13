@@ -1,0 +1,29 @@
+#! /bin/bash
+# coding: utf-8
+
+# https://stackoverflow.com/questions/32379801/grep-whole-paragraphs-of-a-text-containing-a-specific-keyword
+# https://unix.stackexchange.com/questions/55359/how-to-run-grep-with-multiple-and-patterns
+
+
+while getopts "k" OPTION
+do
+    case $OPTION in
+        k)  ks=("$OPTARG")
+            until [[ $(eval "echo \${!OPTIND}") =~ ^-.* ]] || [ -z $(eval "echo \${!OPTIND}") ]; do
+                ks+=($(eval "echo \${!OPTIND}"))
+                OPTIND=$((OPTIND + 1))
+            done
+            rexpr="" # regular expression
+            for k in ${ks[@]}; do
+                rexpr=$rexpr"/$k/ && "
+            done
+            rexpr=$rexpr"//"
+            gawk -v IGNORECASE=1 "$rexpr" RS='\n\n' ORS='\n\n'
+            ;;
+        ?)  echo "Unknown option $OPTION"
+            exit 1
+            ;;
+    esac
+done
+
+exit 0

@@ -1,0 +1,43 @@
+#! /bin/bash
+# coding: utf-8
+
+fmt="\${CreateDate#;DateFmt(\"%Y-%m\")}  \$FileName"
+fmt="-------------------------------\$/Year        \${CreateDate#;DateFmt(\"%Y\")}\$/Title       \$Title\$/Author      \$Author\$/"
+r=""
+
+while getopts "pscr" OPTION
+do
+    case $OPTION in
+        p)  fsa=("$OPTARG")
+            until [[ $(eval "echo \${!OPTIND}") =~ ^-.* ]] || [ -z $(eval "echo \${!OPTIND}") ]; do
+                fsa+=($(eval "echo \${!OPTIND}"))
+                OPTIND=$((OPTIND + 1))
+            done
+            if [ ${#fsa[@]} -ne 0 ]; then
+                fs=""
+                for f in ${fsa[@]}; do
+                    fs+="$f "
+                done
+                fs="./"
+            fi
+            ;;
+        s)  fmt=$fmt"FileSize    \$FileSize\$/"
+            ;;
+        c)  fmt=$fmt"PageCount   \$PageCount\$/"
+            ;;
+        r)  r="-r"
+            ;;
+        ?)  echo "Unknown option $OPTION"
+            exit 1
+            ;;
+    esac
+done
+
+
+# $FilePath gives absolute path @Jinyi
+fmt=$fmt"FilePath    \$Directory/\$FileName\$/"
+fmt="'$fmt'"
+cmd="exiftool -q -m -f -p "$fmt" $r $fs"
+eval "$cmd"
+
+exit 0
