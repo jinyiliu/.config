@@ -7,7 +7,7 @@ set fileencodings=utf-8,gbk,big5
 set nocompatible
 
 " General visual settings
-set cursorline
+" set cursorline
 set number
 " set relativenumber
 " if has("patch-8.1.1564")
@@ -151,12 +151,12 @@ call plug#begin('~/.config/nvim/plugged')
 
 
 " Colorscheme
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim'
+Plug 'lifepillar/vim-solarized8'
 
 
 " Status Line
-Plug 'itchyny/lightline.vim'
-" Plug 'liuchengxu/eleline.vim'
+" Plug 'itchyny/lightline.vim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
@@ -215,44 +215,59 @@ autocmd VimEnter *
   \| endif
 
 
-" joshdick/onedark.vim
+" Colorscheme
+" ===========
 if (has("termguicolors"))
     set termguicolors
     hi LineNr ctermbg=NONE guibg=NONE
 endif
 syntax on
-let g:nvcode_termcolors = 256
-colorscheme onedark
+
+" OneDark
+" let g:nvcode_termcolors = 256
+" colorscheme onedark
+
+" Solarized8
+set background=dark
+colorscheme solarized8_flat
+let g:solarized_visibility="normal"
+let g:solarized_diffmode="normal"
+let g:solarized_termtrans=0
+let g:solarized_extra_hi_groups=1
+let g:solarized_statusline="low"
+let g:solarized_italics=1
+let g:solarized_old_cursor_style=1
+autocmd vimenter * ++nested colorscheme solarized8
 
 
 " itchyny/lightline.vim
-let g:lightline = {
-    \ 'colorscheme': 'onedark',
-    \ }
+" let g:lightline = {
+"     \ 'colorscheme': 'onedark',
+"     \ }
 
-let g:lightline.tabline = {
-    \ 'left': [ [ 'tabs' ] ],
-    \ 'right': [  ],
-    \ }
+" let g:lightline.tabline = {
+"     \ 'left': [ [ 'tabs' ] ],
+"     \ 'right': [  ],
+"     \ }
 
-let g:lightline.tab = {
-    \ 'active': [ 'filename', 'modified' ],
-    \ 'inactive': [ 'filename', 'modified' ],
-    \ }
+" let g:lightline.tab = {
+"     \ 'active': [ 'filename', 'modified' ],
+"     \ 'inactive': [ 'filename', 'modified' ],
+"     \ }
 
-let g:lightline.seperator = { 'left': '', 'right': '' }
-let g:lightline.subseparator = { 'left': '', 'right': '' }
+" let g:lightline.seperator = { 'left': '', 'right': '' }
+" let g:lightline.subseparator = { 'left': '', 'right': '' }
 
-let g:lightline.enable = {
-    \ 'statusline': 1,
-    \ 'tabline': 1
-    \ }
+" let g:lightline.enable = {
+"     \ 'statusline': 1,
+"     \ 'tabline': 1
+"     \ }
 
 
-" RRethy/vim-illuminate
+" vim-illuminate
 let g:Illuminate_ftblacklist = [ 'nerdtree' ]
 let g:Illuminate_delay = 0
-hi link illuminatedWord Visual
+" hi link illuminatedWord Visual
 
 
 " RRethy/vim-hexokinase
@@ -275,8 +290,8 @@ hi link illuminatedWord Visual
 
 " airblace/vim-gitgutter
 let g:gitgutter_map_keys = 0
-nmap c[ <Plug>(GitGutterPrevHunk)
-nmap c] <Plug>(GitGutterNextHunk)
+" nmap c[ <Plug>(GitGutterPrevHunk)
+" nmap c] <Plug>(GitGutterNextHunk)
 
 
 " LunarWatcher/auto-pairs
