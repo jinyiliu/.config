@@ -13,11 +13,12 @@ do
                 fsa+=($(eval "echo \${!OPTIND}"))
                 OPTIND=$((OPTIND + 1))
             done
-            if [ ${#fsa[@]} -ne 0 ]; then
+            if [ ${#fsa[@]} != 1 ]; then
                 fs=""
                 for f in ${fsa[@]}; do
                     fs+="$f "
                 done
+            else
                 fs="./"
             fi
             ;;
