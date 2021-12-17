@@ -235,7 +235,7 @@ let g:solarized_diffmode="normal"
 let g:solarized_termtrans=0
 let g:solarized_extra_hi_groups=1
 let g:solarized_statusline="low"
-let g:solarized_italics=1
+" let g:solarized_italics=1
 let g:solarized_old_cursor_style=1
 autocmd vimenter * ++nested colorscheme solarized8
 
