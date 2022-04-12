@@ -139,6 +139,9 @@ then
     # Speed up cursor
     defaults write NSGlobalDomain KeyRepeat -int 1
     defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+    # Java for Minecraft
+    export PATH=/usr/local/opt/java/bin:$PATH
 fi
 
 # based on your machine @Jinyi
