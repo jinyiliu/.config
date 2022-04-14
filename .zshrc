@@ -112,7 +112,6 @@ export LC_ALL=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias me="cd $HOME"
 alias vi="nvim"
 alias gf="gfortran"
 alias cact="conda activate"
