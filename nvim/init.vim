@@ -175,17 +175,9 @@ Plug 'RRethy/vim-illuminate'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
 
 
-" File Navigation
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
-
 " Slime for vim
 Plug 'jpalardy/vim-slime'
 
-" Coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Native LSP
 " Plug 'neovim/nvim-lspconfig'
@@ -333,48 +325,6 @@ let g:AutoPairsCompatibleMaps = 0 " recommended setting
 " let g:EasyMotion_smartcase = 1
 
 
-" nvim-telescope/telescope.nvim
-lua << EOF
-local actions = require('telescope.actions')
-require('telescope').setup {
-    defaults = {
-        entry_prefix = "  ",
-        prompt_prefix = "► ",
-        selection_caret = "► ",
-        initial_mode = "insert",
-        sorting_strategy = "descending",
-        layout_strategy = "horizontal",
-        winblend = 10,
-        set_env = { ['COLORTERM'] = 'truecolor' },
-        color_devicons = true,
-        border = {},
-        borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
-        path_display = {},
-        file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
-        grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
-        qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
-
-        buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
-
-        file_sorter =  require('telescope.sorters').get_fuzzy_file,
-        file_ignore_patterns = {},
-        generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-        mappings = {
-            i = {
-                ["<C-j>"] = actions.move_selection_next,
-                ["<C-k>"] = actions.move_selection_previous,
-            },
-        },
-    }
-}
-EOF
-
-nnoremap ff <cmd>Telescope find_files<cr>
-nnoremap fg <cmd>Telescope live_grep<cr>
-nnoremap fb <cmd>Telescope buffers<cr>
-nnoremap fc <cmd>Telescope colorscheme<cr>
-
-
 " jpalardy/vim-slime
 let g:slime_target = "tmux"
 let g:slime_default_config = {
@@ -384,64 +334,3 @@ let g:slime_default_config = {
 let g:slime_python_ipython = 1
 let g:slime_dont_ask_default = 1
 
-
-
-" neoclide/coc.nvim
-let g:coc_global_extensions = [
-	\ 'coc-pyright',
-	\ 'coc-json',
-	\ 'coc-vimlsp',
-    \ 'coc-snippets']
-
-" Use <TAB> for trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <C-j>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <silent><expr> <C-k>
-      \ pumvisible() ? "\<C-p>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-
-" Use <leader>c to trigger completion
-inoremap <silent><expr> <leader>c coc#refresh()
-
-" Use `g[` and `g]` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> g[ <Plug>(coc-diagnostic-prev)
-nmap <silent> g] <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use <space>k to show documentation in preview window.
-nnoremap <silent> <space>k :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif
