@@ -1,0 +1,38 @@
+# alias back      'set back = $old; cd $back; unset back; dirs'
+# alias cd        'set old=$cwd; chdir'
+# alternative definitions (work slightly different):
+alias back	'popd \!*'
+alias cd	'pushd \!*'
+
+alias bye	'logout'
+alias cp	'cp -i'
+# alias f         'finger'
+alias getterm	'source $OSdir/bin/getterm'
+alias h         'history -r \!* | more'
+alias j		'jobs -l'
+# alias ll        'ls -l \!* | more'
+# alias ls	  'ls --color=tty'
+alias lo	'logout'
+#alias manpr	  'man \!* | a2ps -m -nh | lpr ; lpq'
+alias mv	'mv -i'
+alias rm	'rm -i'
+alias rs	'set noglob;eval `resize`; unset noglob'
+
+# From tcshrc-1.0.0:
+
+# Alias for "." and ".."
+# Shows current directory
+alias .         'pwd'
+# Goes back one directory
+alias ..        'cd ..'
+alias ../       'cd ../'
+# Goes to previous directory
+# alias -         'cd -'
+alias -         'back'
+
+# Jinyi
+alias vi	'nvim'
+alias gf	'gfortran'
+alias cact	'conda activate'
+alias gls	'git ls-tree --name-only'
+alias ipython	'ipython --pylab'

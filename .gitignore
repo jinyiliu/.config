@@ -4,11 +4,11 @@
 
 # ...but these:
 !/TODO.md
-!/.zshrc
+!/.settings
+!/.alias
 !/.gitignore
 !/iterm2/
 !/nvim/
-!/oh-my-zsh/
 /nvim/plugged/*
 !/bin
 
