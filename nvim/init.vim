@@ -100,8 +100,8 @@ noremap <leader>q <Esc>:q!<CR>
 inoremap jj <Esc>
 
 " Search
-noremap <leader>s /
-inoremap <leader>s <Esc>/
+" noremap <leader>s /
+" inoremap <leader>s <Esc>/
 
 " Redo
 noremap <C-u> <C-r>
@@ -127,22 +127,22 @@ noremap <silent> L $
 
 " Window management
 " Use Ctrl + hjkl to switch window
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+" noremap <C-h> <C-w>h
+" noremap <C-j> <C-w>j
+" noremap <C-k> <C-w>k
+" noremap <C-l> <C-w>l
 
 
 " Tab management
-noremap tn :tabnew<CR>
-noremap th :tabprevious<CR>
-noremap tl :tabnext<CR>
+" noremap tn :tabnew<CR>
+" noremap th :tabprevious<CR>
+" noremap tl :tabnext<CR>
 
 
 " Buffer management
-noremap bd :bdelete<CR>
-noremap bp :bprevious<CR>
-noremap bn :bnext<CR>
+" noremap bd :bdelete<CR>
+" noremap bp :bprevious<CR>
+" noremap bn :bnext<CR>
 
 
 
@@ -176,7 +176,7 @@ Plug 'https://github.com/airblade/vim-gitgutter.git'
 
 
 " Slime for vim
-Plug 'jpalardy/vim-slime'
+" Plug 'jpalardy/vim-slime'
 
 
 " Native LSP
@@ -268,16 +268,16 @@ let g:Illuminate_delay = 0
 
 
 " nvim-treesitter/nvim-treesitter
-"lua << EOF
-"require('nvim-treesitter.configs').setup {
-"  ensure_installed = {  "bash", "c", "c_sharp", "cpp", "fortran", "python",
-"                        "json", "html", "latex", "lua"},
-"  highlight = {
-"    enable = true,
-"    disable = { "python", "c" }
-"  },
-"}
-"EOF
+" lua << EOF
+" require('nvim-treesitter.configs').setup {
+"   ensure_installed = {  "bash", "c", "c_sharp", "cpp", "fortran", "python",
+"                         "json", "html", "latex", "lua"},
+"   highlight = {
+"     enable = true,
+"     disable = { "python", "c" }
+"   },
+" }
+" EOF
 
 
 " airblace/vim-gitgutter
@@ -326,11 +326,11 @@ let g:AutoPairsCompatibleMaps = 0 " recommended setting
 
 
 " jpalardy/vim-slime
-let g:slime_target = "tmux"
-let g:slime_default_config = {
-    \ "socket_name": "default",
-    \ "target_pane": "{right-of}",
-    \ }
-let g:slime_python_ipython = 1
-let g:slime_dont_ask_default = 1
+" let g:slime_target = "tmux"
+" let g:slime_default_config = {
+"     \ "socket_name": "default",
+"     \ "target_pane": "{right-of}",
+"     \ }
+" let g:slime_python_ipython = 1
+" let g:slime_dont_ask_default = 1
 
