@@ -147,7 +147,7 @@ then
     alias ssh="ssh -Y"
     alias lsp="lspaper -p"
     alias fdp="fdpaper -k"
-    alias pp="cd ~/paper"
+    alias pp="cd ~/Dropbox/paper"
 
     # Speed up cursor
     defaults write NSGlobalDomain KeyRepeat -int 1
