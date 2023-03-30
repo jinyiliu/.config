@@ -155,6 +155,9 @@ then
 
     # Java for Minecraft
     export PATH=/usr/local/opt/java/bin:$PATH
+
+    # My code
+    export PYTHONPATH=/Users/liujinyi/code
 fi
 
 # based on your machine @Jinyi
