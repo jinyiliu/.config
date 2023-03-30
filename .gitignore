@@ -11,6 +11,7 @@
 !/oh-my-zsh/
 /nvim/plugged/*
 !/bin
+!/zed
 
 # macOS
 iterm2/AppSupport

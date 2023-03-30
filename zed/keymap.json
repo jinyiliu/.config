@@ -1,0 +1,14 @@
+[
+    {
+        "context": "Pane && docked",
+        "bindings": {
+            "cmd-j": "dock::HideDock",
+        }
+    },
+    {
+        "context": "Workspace",
+        "bindings": {
+            "cmd-j": "dock::FocusDock"
+        }
+    }
+]
