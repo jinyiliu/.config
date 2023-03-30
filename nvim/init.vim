@@ -1,6 +1,8 @@
 " Editor Behavior
 " ===============
 
+" TODO 映射normal模式下的A和I插入
+
 " Avoid messy code
 set encoding=utf-8
 set fileencodings=utf-8,gbk,big5
@@ -8,7 +10,7 @@ set nocompatible
 
 " General visual settings
 " set cursorline
-set number
+" set number
 " set relativenumber
 " if has("patch-8.1.1564")
 " 	set signcolumn=number
