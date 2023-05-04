@@ -116,7 +116,7 @@ alias vi="nvim"
 alias gf="gfortran"
 alias cact="conda activate"
 alias ipython="ipython --pylab"
-alias gls="git ls-tree --name-only"
+alias gls="git ls-files"
 
 
 # suggested by Anaconda v4.5.1
