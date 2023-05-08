@@ -1,9 +1,8 @@
-Workstations at Leiden Observatory use tcsh while my mac uses bash as default shell. (`echo $SHELL` to see the shell you are currently using)
-And I was informed by the people from computer desk that it is suggested to use tcsh instead user defined shell to access the full functionality of workstations in the Observatory.
+Workstations at Leiden Observatory use tcsh while my mac uses bash as default shell. (`echo $SHELL` to see the shell you are currently using). And I was informed by the people from computer desk that it is suggested to use tcsh instead user defined shell to access the full functionality of workstations in the Observatory.
 
 .alias: I move all my aliases in .alias file and make a softlink .alias -> .config/.alias in home directory.
 .settings: Enviroment settings and other settings are here with tcsh language.
-
-.config/.alias and .config/.settings have there softlinks under home diretory. ${HOME}/.tcshrc will call them.
-
 .gitprompt.csh: Mimic the prompt on my mac terminal.
+
+.config/.alias and .config/.settings have their softlinks under home diretory. ${HOME}/.tcshrc will call them.
+
