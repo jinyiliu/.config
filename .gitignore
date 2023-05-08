@@ -12,6 +12,7 @@
 !/nvim/
 /nvim/plugged/*
 !/bin
+!/README
 
 # macOS
 iterm2/AppSupport
