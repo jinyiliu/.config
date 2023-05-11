@@ -8,7 +8,7 @@ set nocompatible
 
 " General visual settings
 " set cursorline
-set number
+set nonumber
 " set relativenumber
 " if has("patch-8.1.1564")
 " 	set signcolumn=number
