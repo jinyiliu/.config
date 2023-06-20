@@ -1,9 +1,11 @@
 setenv PATH         "${PATH}:${HOME}/.config/nvim"
 setenv LC_CTYPE     "en_US.UTF-8"
+setenv PRINTER      "op5"
 
 # ignore case
 set autolist = ambiguous
 set complete = enhance
+set autoexpand
 
 # beautify prompt
 set cg = "%{\033[1;32m%}" # green
