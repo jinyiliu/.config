@@ -1,0 +1,5 @@
+# Command line history completion by arrow keys
+bindkey '\eOA' history-search-backward
+bindkey '\e[A' history-search-backward
+bindkey '\eOB' history-search-forward
+bindkey '\e[B' history-search-forward

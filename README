@@ -3,6 +3,8 @@ Workstations at Leiden Observatory use tcsh while my mac uses bash as default sh
 .alias: I move all my aliases in .alias file and make a softlink .alias -> .config/.alias in home directory.
 .settings: Enviroment settings and other settings are here with tcsh language.
 .gitprompt.csh: Mimic the prompt on my mac terminal.
+.inputrc: User defined keybinds.
 
-.config/.alias and .config/.settings have their softlinks under home diretory. ${HOME}/.tcshrc will call them.
+.config/.alias and .config/.settings have their softlinks under home diretory. ${HOME}/.tcshrc will source them.
 
+${HOME}/.login will source the .inputrc config file to overwrite the default keybinds. Because ${HOME}/.login is loaded after ${HOME}/.tcshrc so I couldn't put my keybinds in .settings.
