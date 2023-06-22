@@ -7,10 +7,4 @@ set autolist = ambiguous
 set complete = enhance
 set autoexpand
 
-# beautify prompt
-set cg = "%{\033[1;32m%}" # green
-set cb = "%{\033[1;34m%}" # blue
-set cy = "%{\033[0;33m%}" # yellow
-set c0 = "%{\033[0m%}"
-
 alias precmd "source ~/.config/.gitprompt.csh"
