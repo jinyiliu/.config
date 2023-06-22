@@ -69,7 +69,7 @@ set lazyredraw "should make scrolling faster
 
 " Mouse
 " set mouse+=a
-
+set mouse=
 
 
 
