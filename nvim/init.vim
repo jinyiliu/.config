@@ -71,6 +71,7 @@ set lazyredraw "should make scrolling faster
 
 " Mouse
 " set mouse+=a
+set mouse=
 
 
 
@@ -147,7 +148,7 @@ noremap <silent> L $
 " noremap bn :bnext<CR>
 
 " Custom settings based on file path
-autocmd BufNewFile,BufRead /Users/liujinyi/Desktop/diary/2023/* set wrap
+autocmd BufNewFile,BufRead /Users/liujinyi/Documents/diary/2023/* set wrap
 
 
 " Vim Plug
