@@ -2,7 +2,7 @@
     {
         "context": "Pane && docked",
         "bindings": {
-            "cmd-j": "dock::HideDock",
+            "cmd-j": "dock::HideDock"
         }
     },
     {
