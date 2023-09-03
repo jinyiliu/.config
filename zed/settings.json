@@ -10,5 +10,25 @@
     "theme": "Solarized Dark",
     "buffer_font_size": 15,
     "buffer_font_family": "JetBrains Mono",
-    "vim_mode": false
+    "vim_mode": false,
+    "preferred_line_length": 100,
+    "show_whitespaces": "none",
+    "terminal": {
+        "alternate_scroll": "off",
+        "blinking": "terminal_controlled",
+        "copy_on_select": false,
+        "env": {},
+        "option_as_meta": false,
+        "working_directory": "always_home",
+        "dock": "bottom",
+        "default_height": 500
+    },
+    "assistant": {
+        "button": false
+    },
+    "language_overrides": {
+        "JSON": {
+            "tab_size": 4
+        }
+    }
 }
