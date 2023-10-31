@@ -4,6 +4,7 @@ Workstations at Leiden Observatory use tcsh while my mac uses bash as default sh
 .settings: Enviroment settings and other settings are here with tcsh language.
 .gitprompt.csh: Mimic the prompt on my mac terminal.
 .inputrc: User defined keybinds.
+.tmux.conf: configuration file for tmux
 
 .config/.alias and .config/.settings have their softlinks under home diretory. ${HOME}/.tcshrc will source them.
 

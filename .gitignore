@@ -9,6 +9,7 @@
 !/.inputrc
 !/.gitignore
 !/.gitprompt.csh
+!/.tmux.conf
 !/iterm2/
 !/nvim/
 /nvim/plugged/*
