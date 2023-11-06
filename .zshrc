@@ -160,6 +160,9 @@ then
 
     # My code
     export PYTHONPATH=/Users/liujinyi/code
+
+    # My .inputrc
+    source /Users/liujinyi/.config/.inputrc
 fi
 
 # based on your machine @Jinyi

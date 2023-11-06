@@ -1,0 +1,5 @@
+set completion-ignore-case on
+bindkey "^p" up-line-or-beginning-search
+bindkey "^n" down-line-or-beginning-search
+bindkey "^P" up-line-or-beginning-search
+bindkey "^N" down-line-or-beginning-search

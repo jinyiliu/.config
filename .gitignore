@@ -12,6 +12,7 @@
 /nvim/plugged/*
 !/bin
 !/zed
+!/.inputrc
 
 # macOS
 iterm2/AppSupport
