@@ -58,11 +58,15 @@ set foldenable
 
 " Indentation
 " Real program dont use TABs but spaces
+" Show existing tab with 4 spaces width
 set tabstop=4
+" Use 4 spaces width when indenting with '>'
 set shiftwidth=4
 set softtabstop=4
 set autoindent
+" Insert 4 spaces on pressing tab
 set expandtab
+autocmd BufRead,BufNewFile *.tsv setlocal noexpandtab
 set shiftround
 
 

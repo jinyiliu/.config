@@ -163,6 +163,9 @@ then
 
     # My .inputrc
     source /Users/liujinyi/.config/.inputrc
+
+    # Rust package path
+    export PATH=/Users/liujinyi/.cargo/bin:$PATH
 fi
 
 # based on your machine @Jinyi
