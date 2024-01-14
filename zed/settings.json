@@ -7,11 +7,15 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+    "telemetry": {
+        "diagnostics": true,
+        "metrics": true
+    },
     "theme": "Solarized Dark",
     "buffer_font_size": 15,
     "buffer_font_family": "JetBrains Mono",
     "vim_mode": false,
-    "preferred_line_length": 100,
+    "pregexreferred_line_length": 100,
     "show_whitespaces": "none",
     "terminal": {
         "alternate_scroll": "off",

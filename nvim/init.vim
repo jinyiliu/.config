@@ -66,7 +66,7 @@ set softtabstop=4
 set autoindent
 " Insert 4 spaces on pressing tab
 set expandtab
-autocmd BufRead,BufNewFile *.tsv setlocal noexpandtab
+autocmd BufRead,BufNewFile *.tsv setlocal noexpandtab tabstop=24 softtabstop=24 ft=txt
 set shiftround
 
 

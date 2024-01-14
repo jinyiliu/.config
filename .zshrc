@@ -148,8 +148,8 @@ then
     alias lsp="lspaper -p"
     alias fdp="fdpaper -k"
     alias pp="cd ~/Dropbox/paper"
-    alias mona="sshfs jliu@alblas.strw.leidenuniv.nl:/data/jliu/ /Users/liujinyi/alblas -o volname=alblas"
-    alias mona="sshfs -o kill_on_unmount,reconnect,allow_other,defer_permissions,direct_io,volname=alblas jliu@alblas.strw.leidenuniv.nl:/data/jliu/ /Users/liujinyi/alblas"
+    alias mona="sshfs jliu@alblas.strw.leidenuniv.nl:/data1/jliu/ /Users/liujinyi/alblas -o volname=alblas"
+    alias mona="sshfs -o kill_on_unmount,reconnect,allow_other,defer_permissions,direct_io,volname=alblas jliu@alblas.strw.leidenuniv.nl:/data1/jliu/ /Users/liujinyi/alblas"
 
     # Speed up cursor
     defaults write NSGlobalDomain KeyRepeat -int 1
