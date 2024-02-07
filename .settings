@@ -13,3 +13,6 @@ set history=2000	# number of commands saved in history
 set savehist=(2000 merge) # also save history to file on logout
 
 alias precmd "source ~/.config/.gitprompt.csh"
+
+# private settings e.g. passwords
+if (-e $HOME/.settings.private) source $HOME/.settings.private
