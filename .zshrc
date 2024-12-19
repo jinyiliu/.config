@@ -144,10 +144,10 @@ then
     # echo -e "\033]6;1;bg;blue;brightness;52\a"
 
     # alias
-    alias ssh="ssh -Y"
+    # alias ssh="ssh -Y"
     alias lsp="lspaper -p"
     alias fdp="fdpaper -k"
-    alias pp="cd ~/Dropbox/paper"
+    alias pp="cd ~/Paper"
     alias mona="sshfs jliu@alblas.strw.leidenuniv.nl:/data1/jliu/ /Users/liujinyi/alblas -o volname=alblas"
     alias mona="sshfs -o kill_on_unmount,reconnect,allow_other,defer_permissions,direct_io,volname=alblas jliu@alblas.strw.leidenuniv.nl:/data1/jliu/ /Users/liujinyi/alblas"
 
@@ -166,6 +166,12 @@ then
 
     # Rust package path
     export PATH=/Users/liujinyi/.cargo/bin:$PATH
+
+    # Python3.11 sitepackages
+    export PATH=$PATH=/usr/local/lib/python3.11/site-packages/
+
+    # Daily papers
+    python3 ~/.config/utils/arxiv.py
 fi
 
 # based on your machine @Jinyi
