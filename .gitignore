@@ -13,7 +13,10 @@
 !/bin
 !/zed/settings.json
 !/.inputrc
+!/utils/
 
 # macOS
 iterm2/AppSupport
 nvim/nvim-osx64/
+/utils/*.atom
+/utils/*.pickle
