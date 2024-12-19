@@ -7,6 +7,10 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+    "show_inline_completions": true,
+    "chat_panel": {
+        "dock": "right"
+    },
     "telemetry": {
         "diagnostics": true,
         "metrics": true
@@ -28,11 +32,32 @@
         "default_height": 500
     },
     "assistant": {
+        "default_model": {
+            "provider": "openai",
+            "model": "gpt-4o"
+        },
+        "version": "2",
         "button": false
     },
     "language_overrides": {
+        "Python": {
+            "show_inline_completions": true
+        },
         "JSON": {
             "tab_size": 4
         }
-    }
+    },
+    "file_scan_exclusions": [
+        // `file_scan_exclusions` has issues with local paths
+        "**/.git",
+        "**/.svn",
+        "**/.hg",
+        "**/CVS",
+        "**/.DS_Store",
+        "**/Thumbs.db",
+        "**/.classpath",
+        "**/.settings",
+        "**/__pycache__",
+        "**/._*"
+    ]
 }
