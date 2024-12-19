@@ -152,7 +152,7 @@ noremap <silent> L $
 " noremap bn :bnext<CR>
 
 " Custom settings based on file path
-autocmd BufNewFile,BufRead /Users/liujinyi/Documents/diary/2023/* set wrap
+autocmd BufNewFile,BufRead /Users/liujinyi/Documents/diary/2024/* set wrap
 
 
 " Vim Plug
