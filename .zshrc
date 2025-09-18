@@ -168,7 +168,10 @@ then
     export PATH=/Users/liujinyi/.cargo/bin:$PATH
 
     # Python3.11 sitepackages
-    export PATH=$PATH=/usr/local/lib/python3.11/site-packages/
+    export PATH=/usr/local/lib/python3.11/site-packages/:$PATH
+
+    # Texlive
+    export PATH=/usr/local/texlive/2025/bin/universal-darwin:$PATH
 
     # Daily papers
     python3 ~/.config/utils/arxiv.py
